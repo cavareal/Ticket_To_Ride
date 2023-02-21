@@ -30,11 +30,11 @@ public class ActionUtilisateur{
 	}
 	
 	// ACCESSEURS
-	TypeActionUtilisateur getType(){
+	public TypeActionUtilisateur getType(){
 		return this.type;
 	}
 	
-	String getParametre(){
+	public String getParametre(){
 		return this.parametre;
 	}
 

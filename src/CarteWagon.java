@@ -10,12 +10,12 @@ public class CarteWagon {
  * @ACOMPLETER
  */
 	// Attribus
-    String couleur;
+    public String couleur;
     
 
 	// A
     
-    String getCouleur(){
+    public String getCouleur(){
         return couleur;
     }
 

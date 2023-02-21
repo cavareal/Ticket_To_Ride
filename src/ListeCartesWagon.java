@@ -98,7 +98,7 @@ public class ListeCartesWagon {
 	 */
 	// déclarer la méthode getNombreOccurrences
 
-	int getNombreOccurrences(String couleur){
+	public int getNombreOccurrences(String couleur){
 		if (estVide()){
 			return 0 ;
 		}

@@ -1,8 +1,6 @@
 package src;
 
 import lib.Donnees;
-import lib.IHM;
-
 
 /**
  * La classe Plateau représente le plateau de jeu des Aventuriers du Rail.
@@ -33,7 +31,7 @@ public class Plateau {
 	/**
 	 * Crée le plateau de jeu
 	 */
-	Plateau() {
+	public Plateau() {
 		initialiseEtats(); // @FOURNI
 		// Compléter avec l'initialisation des villes et des routes
 		initialiseVilles();
@@ -46,18 +44,18 @@ public class Plateau {
 	 * @return les états du plateau de jeu
 	 * @FOURNI
 	 */
-	Etat[] getEtats() {
+	public Etat[] getEtats() {
 		return this.etats;
 	}
 
 	// TODO Déclarer les accesseurs
 	
-	Ville[] getVilles()
+	public Ville[] getVilles()
 	{
 		return this.villes;
 	}
 
-	Route[] getRoutes()
+	public Route[] getRoutes()
 	{
 		return this.routes;
 	}
@@ -153,7 +151,7 @@ public class Plateau {
 	 */
 	// Implementer la recherche d'une route
 	
-	Route rechercheRoute(String route)
+	public Route rechercheRoute(String route)
 	{
 		for (int i=0; i < routes.length; i++){
 			if (routes[i].getNom().equals(route)){

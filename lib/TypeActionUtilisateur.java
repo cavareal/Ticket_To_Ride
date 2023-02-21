@@ -8,7 +8,7 @@ package lib;
  * d'une route ({@code ROUTE}), et la pioche d'une carte wagon ({@code PIOCHECW}).
  * @since Incrément 1
  */
-enum TypeActionUtilisateur {
+public enum TypeActionUtilisateur {
 	FINTOUR,
 	ROUTE,
 	PIOCHECW;

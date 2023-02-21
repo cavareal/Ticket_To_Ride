@@ -42,17 +42,17 @@ public class Ville {
 	}
 
 	// ACCESSEURS
-	String getNom() {
+	public String getNom() {
 		// Modifier l'accesseur pour qu'il renvoie le nom de la ville
 		return this.nom;
 	}
 
-	double getX() {
+	public double getX() {
 		// Modifier l'accesseur pour qu'il renvoie l'abscisse de la ville
 		return this.x;
 	}
 
-	double getY() {
+	public double getY() {
 		// Modifier l'accesseur pour qu'il renvoie l'ordonnee de la ville
 		return this.y;
 	}

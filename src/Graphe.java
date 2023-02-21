@@ -1,5 +1,7 @@
 package src;
 
+import lib.Donnees;
+
 /**
  * La classe Graphe est la représentation du plateau de jeu pour le calcul des bonus du jeu.
  * Un graphe dispose d'un nombre de sommets correspondants aux villes du plateau de jeu. 

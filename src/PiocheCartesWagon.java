@@ -1,5 +1,7 @@
 package src;
 
+import lib.Donnees;
+
 /**
  * La classe PiocheCartesWagon est l'implémentation d'une pile abstraite dont le
  * stockage des éléments est réalisé dans un tableau.
@@ -28,7 +30,7 @@ public class PiocheCartesWagon {
 	 * pouvoir stocker 110 cartes "wagon", comme indiqué dans la règle du jeu.
 	 */
 	// déclarer le constructeur
-	PiocheCartesWagon(){
+	public PiocheCartesWagon(){
 		this.cartes = new CarteWagon[110]; //110 cartes max dans les règles
 	}
 
@@ -47,7 +49,7 @@ public class PiocheCartesWagon {
 	 *         sinon
 	 */
 	// déclarer la méthode estVide
-	boolean estVide(){
+	public boolean estVide(){
 		if (indiceSommet == -1){
 			return true;
 		}
@@ -101,7 +103,7 @@ public class PiocheCartesWagon {
 	 *         si la pile est vide
 	 */
 	// déclarer la méthode depile
-	CarteWagon depile() {
+	public CarteWagon depile() {
 		if (estVide()){
 			throw new Error ("la pioche est vide");
 		}
@@ -133,7 +135,7 @@ public class PiocheCartesWagon {
 	 * remplit la pioche.
 	 */
 	//déclarer la méthode ajouteCartes
-	void ajouteCartes(){
+	public void ajouteCartes(){
 		String tabCouleur[] = Donnees.COULEURS_WAGON;
 		for(int i = 0; i < tabCouleur.length; i++){
 			for(int j = 0; j < 12 ; j++){
@@ -152,7 +154,7 @@ public class PiocheCartesWagon {
 	 * @EXTENSION
 	 */
 	// déclarer la méthode melange
-	void melange(){
+	public void melange(){
 		Random random = new Random();
 		for (int n = 0; n < 1000; n++){
 			int n1 = random.nextInt(cartes.length);
@@ -214,7 +216,7 @@ public class PiocheCartesWagon {
 	 *         {@code nombreCartes} cartes "wagon"
 	 */
 	// déclarer la méthode extraitCartes
-	CarteWagon[] extraitCartes(int nombre){
+	public CarteWagon[] extraitCartes(int nombre){
 		CarteWagon[] tabExtrait = new CarteWagon[nombre];
 		int c = 0;
 		for (int i = 0; i < nombre; i++){

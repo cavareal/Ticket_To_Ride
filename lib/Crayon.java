@@ -184,7 +184,7 @@ public class Crayon {
 	 * @param id l'identifiant du chemin
 	 * @param contour les points du chemin
 	 */
-	void dessineChemin(String id, String contour){
+	public void dessineChemin(String id, String contour){
 		SVGPath svg = new SVGPath();
 		svg.setFill(this.couleurFond);
 		svg.setContent(contour);

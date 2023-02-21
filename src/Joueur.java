@@ -1,4 +1,6 @@
 package src;
+
+import lib.IHM;
 /**
  * La classe Joueur repr?sente un joueur des Aventuriers du Rail.
  * Un joueur dispose d'un num?ro, d'une couleur, d'un nombre de wagon et d'un score.
@@ -41,7 +43,7 @@ public class Joueur {
 	 */
 	// D?clarer le constructeur
 
-	Joueur(int numero, String couleur){
+	public Joueur(int numero, String couleur){
 		this.numero = numero;
 		this.couleur = couleur;
 	}
@@ -49,19 +51,19 @@ public class Joueur {
 
 	// ACCESSEURS
 	
-	int getNumero(){
+	public int getNumero(){
 		return numero;
 	}
 
-	String getCouleur(){
+	public String getCouleur(){
 		return couleur;
 	}
 
-	int getNombreWagons(){
+	public int getNombreWagons(){
 		return nombreWagons;
 	}
 
-	int getScore(){
+	public int getScore(){
 		return score;
 	}
 	
@@ -73,7 +75,7 @@ public class Joueur {
 	 * @since Incr?ment 4
 	 */
 	// d?clarer la m?thode ajouteAuScore
-	void ajouteAuScore(int scr){
+	public void ajouteAuScore(int scr){
 		score += scr;
 	}
 	
@@ -83,7 +85,7 @@ public class Joueur {
 	 * @since Incr?ment 4
 	 */
 	// d?clarer la m?thode enleveWagons
-	void enleveWagons(int nombreDeWagonAEnlever){
+	public void enleveWagons(int nombreDeWagonAEnlever){
 		if (nombreDeWagonAEnlever >=0){
 			nombreWagons -= nombreDeWagonAEnlever;
 			if (nombreWagons > 45){
@@ -111,7 +113,7 @@ public class Joueur {
 	 * @since Incr�ment 7
 	 */
 	// d�clarer l'accesseur en lecture de la main du joueur
-	ListeCartesWagon getMainCartesWagon(){
+	public ListeCartesWagon getMainCartesWagon(){
 		return mainCartesWagon;
 	}
 
@@ -132,7 +134,7 @@ public class Joueur {
 	 * @since Incr�ment 7
 	 */
 	// d�clarer la m�thode prendCarteWagon
-	void prendsCarteWagon(CarteWagon carte){
+	public void prendsCarteWagon(CarteWagon carte){
 		mainCartesWagon = mainCartesWagon.ajoute(carte);
 	}
 }

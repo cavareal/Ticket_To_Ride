@@ -17,6 +17,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+//import java.lang.Object;
+//import java.lang.Enum;
+
+import src.Ville;
+import src.Route;
+import src.Etat;
+import lib.Crayon;
+import src.PiocheCartesWagon;
+import src.CarteWagon;
+import src.Joueur;
+import src.ListeCartesWagon;
+
 
 /**
  * La classe IHM fournit des méthodes pour dessiner et intéragir avec la fenêtre
@@ -81,7 +93,7 @@ import javafx.scene.text.Text;
 	 * @param hauteur la hauteur de la fenêtre
 	 * @param couleurFond la couleur de fond de la fenêtre
 	 */
-	void afficheFenetre(String titre, int largeur, int hauteur, String couleurFond){
+	public void afficheFenetre(String titre, int largeur, int hauteur, String couleurFond){
 		this.fenetre = new Fenetre();
 		//Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); // for single screen environment
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -100,7 +112,7 @@ import javafx.scene.text.Text;
 	 * Par défaut, le contour de l'état est une nuance aléatoire de bleu et de noir.
 	 * @param etat l'objet {@link Etat} à dessiner
 	 */
-	void dessineEtat(Etat etat) {
+	public void dessineEtat(Etat etat) {
 		this.crayon.deplace(10, 10);
 		this.crayon.changeEncre("noir", "bleu", 0.05 + Math.random() * 0.2);
 		this.crayon.dessineChemin("etat" + etat.getNom(), etat.getContour());
@@ -112,7 +124,7 @@ import javafx.scene.text.Text;
 	 * sur fond noir semi-opaque. 
 	 * @param ville l'objet {@link Ville} à dessiner
 	 */
-	void dessineVille(Ville ville) {
+	public void dessineVille(Ville ville) {
 		this.crayon.deplace(10, 10);
 		this.crayon.translate(ville.getX(), ville.getY());
 		this.crayon.changeEncre("blanc", "noir", 0.5);
@@ -129,7 +141,7 @@ import javafx.scene.text.Text;
 	 * affichée.
 	 * @param route l'objet {@link Route} à dessiner
 	 */
-	void dessineRoute(Route route) {
+	public void dessineRoute(Route route) {
 		int epaisseurRoute = 5;
 		double x1 = route.getVilleDepart().getX();
 		double y1 = route.getVilleDepart().getY();
@@ -185,7 +197,7 @@ import javafx.scene.text.Text;
 	 * Le bouton peut être affiché sélectionné (suite à un clic souris) ou non sélectionné.
 	 * @param selectionne indique si le bouton doit être affiché "sélectionné" (en rouge) ou non
 	 */
-	void dessineBoutonSuivant(boolean selectionne){
+	public void dessineBoutonSuivant(boolean selectionne){
 		this.crayon.deplace(970, 445);
 		try{
 			Image image = new Image("next.png");
@@ -274,7 +286,7 @@ import javafx.scene.text.Text;
 	 * @param cartesWagonVisibles la pioche de cinq cartes "wagon" visibles
 	 * @since Incrément 6
 	 */
-	void affichePioches(PiocheCartesWagon piocheCartesWagon,
+	public void affichePioches(PiocheCartesWagon piocheCartesWagon,
 			CarteWagon[] cartesWagonVisibles) {
 		this.fenetre.effaceFormes("reppiocheCW");
 		this.fenetre.effaceFormes("repdefausse");
@@ -304,7 +316,7 @@ import javafx.scene.text.Text;
 	 * Dans cette version, le contenu de la défausse n'est pas affiché.
 	 * @since Incrément 6
 	 */
-	void afficheDefausse() {
+	public void afficheDefausse() {
 		this.crayon.deplace(950+2, 30+LARGEUR_CARTE+10);
 		this.crayon.changeEncre("noir", "blanc", 1.0);
 		Rectangle rect = this.crayon.creeRectangle("repdefausse", HAUTEUR_CARTE+4, LARGEUR_CARTE-4);
@@ -325,7 +337,7 @@ import javafx.scene.text.Text;
 	 * @param joueur le joueur pour lequel on affiche les cartes
 	 * @since Incrément 7
 	 */
-	void afficheCartesJoueur(Joueur joueur) {
+	public void afficheCartesJoueur(Joueur joueur) {
 		this.fenetre.effaceFormes("cj");
 		this.crayon.deplace(5, 510);
 		// Cartes wagon
@@ -376,7 +388,7 @@ import javafx.scene.text.Text;
 	 * Par défaut, le texte est affiché dans une fenêtre popup.
 	 * @param message le texte à afficher
 	 */
-	void afficheMessageErreur(String message) {
+	public void afficheMessageErreur(String message) {
 		Platform.runLater(new Runnable(){
 			@Override
 			public void run() {
@@ -402,6 +414,8 @@ import javafx.scene.text.Text;
 	 * (voir {@link IHM#afficheMessageErreur(String)})
 	 * @return un objet {@link PopOver}
 	 */
+
+	 
 	PopOver creePopupErreur(){
 		PopOver popOver = new PopOver();
 		DoubleProperty masterArrowSize = new SimpleDoubleProperty(8);
@@ -416,6 +430,7 @@ import javafx.scene.text.Text;
 		popOver.setAutoHide(true);
 		return popOver;
 	}
+
 	
 	/**
 	 * Affiche une information (texte) sur la fenêtre principale.
@@ -444,7 +459,7 @@ import javafx.scene.text.Text;
 	 * @param gras indique si l'information doit être affichée en gras ou non
 	 * @param couleur (optionnel) : la couleur du texte à afficher
 	 */
-	void afficheInformation(String message, int x, int y, boolean gras, String... couleur){
+	public void afficheInformation(String message, int x, int y, boolean gras, String... couleur){
 		this.crayon.deplace(x, y);
 		this.crayon.changeEncre((couleur.length==0)?"noir":couleur[0], null, 0);
 		if(gras){
@@ -460,7 +475,7 @@ import javafx.scene.text.Text;
 	 * ou pioche d'une carte)
 	 * @return le nom de l'action choisie par le joueur
 	 */
-	ActionUtilisateur attenteActionJoueur(){
+	public ActionUtilisateur attenteActionJoueur(){
 		ActionUtilisateur action = null;
 		String selection = this.fenetre.selectionneForme("rep");
 		if(selection.equals("Fin du tour")){
@@ -477,14 +492,14 @@ import javafx.scene.text.Text;
 	 * Efface une route affichée sur la fenêtre principale
 	 * @param route l'objet {@link Route} à effacer
 	 */
-	void effaceRoute(Route route){
+	public void effaceRoute(Route route){
 		this.fenetre.effaceFormes("reproute" + route.getNom());
 	}
 	
 	/**
 	 * Efface toutes les informations affichées sur la fenêtre principale
 	 */
-	void effaceInformation(){
+	public void effaceInformation(){
 		this.fenetre.effaceFormes("info");
 		this.fenetre.effaceFormes("cj");
 	}
@@ -492,7 +507,7 @@ import javafx.scene.text.Text;
 	/**
 	 * Efface tous les boutons affichés sur la fenêtre principale
 	 */
-	void effaceBoutons(){
+	public void effaceBoutons(){
 		this.fenetre.effaceFormes("repbouton");
 	}
 
@@ -502,7 +517,7 @@ import javafx.scene.text.Text;
 	 * @param couleur la couleur à afficher pour le fond de la fenêtre (i.e. 
 	 * la couleur du joueur courant)
 	 */
-	void afficheCouleurJoueurCourant(String couleur){
+	public void afficheCouleurJoueurCourant(String couleur){
 		this.fenetre.changeCouleurDeFond(couleur);
 	}
 

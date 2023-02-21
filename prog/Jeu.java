@@ -1,8 +1,10 @@
 package prog;
 
-import java.util.Random;
-import src.Plateau;
-import src.Joueur;
+import lib.IHM;
+import src.*;
+import lib.Donnees;
+import lib.ActionUtilisateur;
+import lib.TypeActionUtilisateur;
 
 /**
  * La classe Jeu int?gre les classes du jeu des Aventuriers du Rail et impl?mente la

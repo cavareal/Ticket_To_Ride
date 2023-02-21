@@ -36,7 +36,7 @@ public class Etat {
 	 * @return le nom de l'état
 	 * @FOURNI
 	 */
-	String getNom() {
+	public String getNom() {
 		return this.nom;
 	}
 
@@ -44,7 +44,7 @@ public class Etat {
 	 * @return les coordonnées des points permettant de dessiner l'état
 	 * @FOURNI
 	 */
-	String getContour() {
+	public String getContour() {
 		return this.contour;
 	}
 

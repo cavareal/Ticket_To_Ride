@@ -41,7 +41,7 @@ public class Route {
 	 * @since Incr�ment 3
 	 */
 	// accesseur en lecture du proprietaire de la route
-	Joueur getProprietaire(){
+	public Joueur getProprietaire(){
 		return this.proprietaire;
 	}
 	
@@ -51,7 +51,7 @@ public class Route {
 	 * @since Incr�ment 3
 	 */
 	// accesseur en �criture du proprietaire de la route
-	void setProprietaire(Joueur joueur){
+	public void setProprietaire(Joueur joueur){
 		this.proprietaire = joueur;
 	}
 	
@@ -63,7 +63,7 @@ public class Route {
 	 * @param couleur la couleur de la route
 	 */
 	// D�clarer le constructeur
-	Route(Ville villeDepart, Ville villeArrivee, String couleur)
+	public Route(Ville villeDepart, Ville villeArrivee, String couleur)
 	{
 		this.villeDepart = villeDepart;
 		this.villeArrivee = villeArrivee;
@@ -72,17 +72,17 @@ public class Route {
 	
 
 	// ACCESSEURS
-	Ville getVilleDepart() {
+	public Ville getVilleDepart() {
 		// Modifier l'accesseur pour qu'il renvoie la ville de d�part de la route
 		return this.villeDepart;
 	}
 
-	Ville getVilleArrivee() {
+	public Ville getVilleArrivee() {
 		// Modifier l'accesseur pour qu'il renvoie la ville d'arriv�e de la route
 		return this.villeArrivee;
 	}
 
-	String getCouleur() {
+	public String getCouleur() {
 		// Modifier l'accesseur pour qu'il renvoie la couleur de la route
 		return this.couleur;
 	}
@@ -92,7 +92,7 @@ public class Route {
 	 * par un tiret '-'
 	 * @return le nom de la route
 	 */
-	String getNom() {
+	public String getNom() {
 		// Modifier la m�thode pour qu'elle renvoie le nom de la ville
 		return villeDepart.getNom() + " - " + villeArrivee.getNom();
 	}
@@ -109,7 +109,7 @@ public class Route {
 	 * @return la longueur de la route (entre 1 et 6), calcul�e en fonction de
 	 *         la position des villes
 	 */
-	int getLongueur() {
+	public int getLongueur() {
 		// Modifier la m�thode pour qu'elle renvoie la longueur de la route
 		double x1 = this.villeDepart.getX();
 	 	double x2 = this.villeArrivee.getX();
@@ -133,7 +133,7 @@ public class Route {
 	 *         erreur dans les donn�es de la route
 	 */
 	//Transformer la longueur de la route en points
-	int getNombrePoints()
+	public int getNombrePoints()
 	{
 		int l = this.getLongueur();
 		int[] tabPoints = {1, 2, 4, 7, 10, 15};
