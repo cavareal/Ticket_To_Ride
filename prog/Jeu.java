@@ -195,7 +195,7 @@ public class Jeu {
 	 * Cr?e un nombre de joueurs pour les jeu des Aventuriers du Rail
 	 * Les joueurs sont initialis? avec les couleurs fournies {@link Donnees#COULEURS_JOUEUR}
 	 * @since Incr?ment 2
-	 * @param nbJoueurs le nombre de joueurs ? cr?er
+	 * @param nombreDeJoueurs le nombre de joueurs ? cr?er
 	 * @EXTENSION : la couleur d'un joueur est tir?e al?atoirement
 	 */
 
@@ -449,7 +449,7 @@ public class Jeu {
 	 * Pioche d'une carte "wagon" de la part du joueur, soit dans la pioche
 	 * cach?e, soit dans la pioche visible A partir de l'incr?ment 7, la carte
 	 * pioch?e est ajout?e ? la main du joueur
-	 * @param indice l'indice de la carte pioch?e visible s?lectionn?e, ou -1 si
+	 * @param entier l'indice de la carte pioch?e visible s?lectionn?e, ou -1 si
 	 *            la carte est pioch?e dans la pioche cach?e.
 	 * @since Incr?ment 6
 	 */
